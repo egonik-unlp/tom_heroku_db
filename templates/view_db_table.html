@@ -1,0 +1,24 @@
+<!doctype html>
+<table>
+<tr>
+  <th>Offer id</th>
+  <th>username</th> 
+  <th>finish rate</th>
+  <th>methods</th>
+  <th>max single trans amount</th>
+  <th>available</th>
+  <th>price</th>
+</tr>
+{% for r in tables%}
+<tr>
+  <td>{{ r[0] }}</td>
+  <td>{{ r[1] }}</td> 
+  <td>{{ r[2] }}</td>
+  <td>{{ r[3] }}</td>
+  <td>{{ r[4] }}</td> 
+  <td>{{ r[5] }}</td>
+  <td>{{ r[6] }}</td>
+  
+</tr>
+{% endfor %}
+</table>

@@ -1,0 +1,6 @@
+*/__pycache__
+__pycache__
+.env
+*.sqpbpro
+database2.db
+plot.ipynb
