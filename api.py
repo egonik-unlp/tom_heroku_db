@@ -34,10 +34,12 @@ class Test_msj(Resource):
 
 
 def sensor():
-    main.main()
+    main.filter_db()
     print("Scheduler is alive!")
 
 sched = BackgroundScheduler(daemon=True)
+sched.add_job(sensor)
+sched.add_job(exchange)
 sched.add_job(sensor,'interval',minutes=15)
 sched.add_job(exchange, 'interval', minutes=60)
 sched.start()
