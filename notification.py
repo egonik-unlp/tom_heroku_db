@@ -1,9 +1,7 @@
 from numpy import load
 from dotenv import load_dotenv
 import requests as req
-from database_management import Offer, Token, Token_Value_Usd
-from app import db
-import pandas as pd
+from database_management import Token
 import os
 
 load_dotenv()
@@ -22,21 +20,21 @@ def test(text="Estoy andando pedazo de tontolin"):
 
 
 
-def main(data):
-	tablita=data
-	print(tablita)
-	token = os.getenv("API_KEY")
-	for chat_id in (os.getenv("CHAT_ID"), os.getenv("CHAT_ID1")):
-		urlp = f"https://api.telegram.org/bot{token}"
-		try:
-			package="\n\n".join(["\n".join([f"{x} = {str(z)}" for x,z in v.iteritems()]) for k,v in tablita.iterrows()])
-		except AttributeError:
-			package="\n".join([f"{x} = {str(z)}" for x,z in tablita.iteritems()])
-		params = {"chat_id": os.getenv("CHAT_ID"), 
-		"text":package}
+# def main(data):
+# 	tablita=data
+# 	print(tablita)
+# 	token = os.getenv("API_KEY")
+# 	for chat_id in (os.getenv("CHAT_ID"), os.getenv("CHAT_ID1")):
+# 		urlp = f"https://api.telegram.org/bot{token}"
+# 		try:
+# 			package="\n\n".join(["\n".join([f"{x} = {str(z)}" for x,z in v.iteritems()]) for k,v in tablita.iterrows()])
+# 		except AttributeError:
+# 			package="\n".join([f"{x} = {str(z)}" for x,z in tablita.iteritems()])
+# 		params = {"chat_id": os.getenv("CHAT_ID"), 
+# 		"text":package}
 
-		r = req.get(urlp + "/sendMessage", params=params)
-	return r
+# 		r = req.get(urlp + "/sendMessage", params=params)
+# 	return r
 
 def from_db(selected_offers):
 	text=''
