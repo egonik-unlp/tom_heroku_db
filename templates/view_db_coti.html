@@ -1,0 +1,20 @@
+<!doctype html>
+<h1>Datos de p2p-binance de hoy </h1>
+
+
+<table>
+<tr>
+  <th>value id</th>
+  <th>date</th> 
+  <th>value usd</th>
+  <th>token id</th>
+</tr>
+{% for r in tables%}
+<tr>
+  <td>{{ r[0] }}</td>
+  <td>{{ r[1] }}</td> 
+  <td>{{ r[2] }}</td>
+  <td>{{ r[3] }}</td>  
+</tr>
+{% endfor %}
+</table>
