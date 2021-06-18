@@ -39,9 +39,9 @@ def sensor():
     print("Scheduler is alive!")
 
 sched = BackgroundScheduler(daemon=True)
-sched.add_job(db_starter)
-sched.add_job(sensor)
-sched.add_job(exchange)
+# sched.add_job(db_starter)
+# sched.add_job(sensor)
+# sched.add_job(exchange)
 sched.add_job(sensor,'interval',minutes=15)
 sched.add_job(exchange, 'interval', minutes=60)
 sched.start()
