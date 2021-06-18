@@ -8,6 +8,7 @@ import notification
 from exchange_rates import main as exchange
 from flask_restful import Resource, Api
 from database_management import Offer, Token, Token_Value_Usd
+from database_management import main as db_starter
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, date
 # from .getter import getter
@@ -38,6 +39,7 @@ def sensor():
     print("Scheduler is alive!")
 
 sched = BackgroundScheduler(daemon=True)
+sched.add_job(db_starter)
 sched.add_job(sensor)
 sched.add_job(exchange)
 sched.add_job(sensor,'interval',minutes=15)

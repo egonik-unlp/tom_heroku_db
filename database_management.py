@@ -4,6 +4,7 @@
 # from sqlalchemy.orm import backref
 from datetime import datetime
 from datetime import date as _date
+from re import L
 from app import db
 
 
@@ -59,8 +60,12 @@ class Token_Value_Usd(db.Model):
 		self.date=datetime.now()
 		self.value_usd=value_usd
 		self.token_id=token_id
+def main():
+	db.create_all()
+	for token in ["USDT","BTC","BUSD","BNB","ETH","DAI"]:
+		db.session.add(Token(name=token))
+	db.session.commit()
 
 
-
-
-db.create_all()
+if __name__=='__main__':
+	main()	
