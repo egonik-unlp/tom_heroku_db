@@ -84,9 +84,9 @@ def cotizaciones():
                                                                          Token_Value_Usd.date,
                                                                          Token_Value_Usd.value_usd,
                                                                          Token_Value_Usd.token_id).\
-                                                                        filter(extract('day',Offer.date)==date.today().day).\
-                                                                        filter(extract('month',Offer.date)==date.today().month).\
-                                                                        filter(extract('year', Offer.date) == date.today().year).all())
+                                                                        filter(extract('day',Token_Value_Usd.date)==date.today().day).\
+                                                                        filter(extract('month',Token_Value_Usd.date)==date.today().month).\
+                                                                        filter(extract('year', Token_Value_Usd.date)==date.today().year).all())
 
 
 
