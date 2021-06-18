@@ -35,7 +35,16 @@ class Test_msj(Resource):
 
 
 def sensor():
-    main.filter_db()
+    main.filter_db(params=[
+				{
+					'token':'USDT',
+					'price':161,
+					'target':40000,
+					'finish_rate':.80,
+					'order_count':20
+				},
+		
+			])
     print("Scheduler is alive!")
 
 sched = BackgroundScheduler(daemon=True)
