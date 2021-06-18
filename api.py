@@ -10,16 +10,16 @@ from flask_restful import Resource, Api
 from database_management import Offer, Token, Token_Value_Usd
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, date
-import getter
+# from .getter import getter
 
 from app import app, api, db
 
 # app = Flask(__name__)
 # api = Api(app)
 
-class Query(Resource):
-    def get(self):
-        return getter.consulta(), 200
+# class Query(Resource):
+    # def get(self):
+        # return getter.consulta(), 200
 
 
 class Test(Resource):
@@ -46,7 +46,7 @@ sched.start()
 
 
 # Create routes
-api.add_resource(Query, '/query')
+# api.add_resource(Query, '/query')
 api.add_resource(Test, '/test')
 api.add_resource(Test_msj, '/test_msj')
 
