@@ -63,3 +63,4 @@ class Token_Value_Usd(db.Model):
 
 
 
+db.create_all()
