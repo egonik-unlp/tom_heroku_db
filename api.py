@@ -80,7 +80,7 @@ def home():
                                                                         filter(extract('year', Offer.date) == date.today().year).all())
 @app.route("/cotizaciones")
 def cotizaciones():
-    return render_template('view_db_coti.html', tables=Token_Value_Usd.query.with_entities(Token_Value_Usd.value_id,
+    return render_template('view_db_coti.html', rows=Token_Value_Usd.query.with_entities(Token_Value_Usd.value_id,
                                                                          Token_Value_Usd.date,
                                                                          Token_Value_Usd.value_usd,
                                                                          Token_Value_Usd.token_id).\
