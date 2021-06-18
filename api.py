@@ -1,6 +1,6 @@
 from flask import request, Flask, url_for, redirect, render_template
 import main
-import exchange_rates
+# import exchange_rates
 import os
 import test
 from sqlalchemy import extract
@@ -12,7 +12,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, date
 # from .getter import getter
 
-from app import app, api, db
+from app import app, api
 
 # app = Flask(__name__)
 # api = Api(app)
