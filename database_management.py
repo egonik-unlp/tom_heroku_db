@@ -24,7 +24,7 @@ class Offer(db.Model):
 	datetime=db.Column(db.DateTime, nullable=False)
 	token_id=db.Column(db.Integer, db.ForeignKey("token.token_id"), nullable=False)
 	user_name=db.Column(db.String, nullable=False)
-	user_id=db.Column(db.Integer, nullable=False)
+	user_id=db.Column(db.String, nullable=False)
 	finish_rate=db.Column(db.Float, nullable=False)
 	order_count=db.Column(db.Integer, nullable=False)
 	methods=db.Column(db.String(256), nullable=False)
