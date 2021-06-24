@@ -3,10 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Api
 import click
 from flask.cli import with_appcontext
+from dotenv import load_dotenv
 
 import os
 app = Flask(__name__)
 api = Api(app)
+
+load_dotenv()
 
 # db_name="database.db"
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(db_name)
@@ -25,4 +28,4 @@ def create_tables():
 	db.create_all()
 	
 app.cli.add_command(create_tables)
-    
+
